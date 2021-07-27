@@ -10,8 +10,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Hardware
-Microcontroller: Esp32 NodeMCU
-**Sensor:**
+Microcontroller: Esp32 NodeMCU,
+
+
+**Sensors:**
 - FC-37 (Rain Sensor)
 - Capacitive soil moisture sensor v1.2 (Soil moisture Sensor)
 - DS18B20 (Soil temperature Sensor)
