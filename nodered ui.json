@@ -1,0 +1,996 @@
+[
+    {
+        "id": "8cc2fb5e4e4d88bc",
+        "type": "tab",
+        "label": "climate",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "428f8604148feac8",
+        "type": "tab",
+        "label": "manager",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "45fef6fd.16853",
+        "type": "mqtt-broker",
+        "name": "Bee Hive",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "81b11503.49f9",
+        "type": "ui_group",
+        "name": "Green House Climate",
+        "tab": "f9b6bb69.ef6f58",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f9b6bb69.ef6f58",
+        "type": "ui_tab",
+        "name": "Climate",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f260dba15e8a9395",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f596769b937e995b",
+        "type": "ui_tab",
+        "name": "Manage",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "42955a33cafb5b6d",
+        "type": "ui_group",
+        "name": "Manager",
+        "tab": "f596769b937e995b",
+        "order": 1,
+        "disp": true,
+        "width": 4,
+        "collapse": false
+    },
+    {
+        "id": "9f1c1064727d0b8b",
+        "type": "ui_spacer",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "spacer",
+        "group": "",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "111463bc9b760142",
+        "type": "ui_switch",
+        "z": "428f8604148feac8",
+        "name": "Light",
+        "label": "Light",
+        "tooltip": "Manages the lightbulb of the \"Smart Greenhouse\"",
+        "group": "42955a33cafb5b6d",
+        "order": 2,
+        "width": "4",
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "lightbulb",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o",
+        "oncolor": "yellow",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o",
+        "offcolor": "white",
+        "animate": true,
+        "x": 650,
+        "y": 180,
+        "wires": [
+            [
+                "03dc3e17c737b042",
+                "18706f4b15ad98e4"
+            ]
+        ]
+    },
+    {
+        "id": "81ed59536e1a61dc",
+        "type": "mqtt out",
+        "z": "428f8604148feac8",
+        "name": "lightbulb publisher",
+        "topic": "aau_gh/manager/lightbulb",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "45fef6fd.16853",
+        "x": 1270,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "03dc3e17c737b042",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage MQTT Pub. fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"on\"\n\nif(msg.payload==false)\n    msg.payload = \"off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 180,
+        "wires": [
+            [
+                "81ed59536e1a61dc"
+            ]
+        ]
+    },
+    {
+        "id": "18706f4b15ad98e4",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage Notification fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"Light turned on\"\n\nif(msg.payload==false)\n    msg.payload = \"Light turned off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 240,
+        "wires": [
+            [
+                "7076d2604b3f1762"
+            ]
+        ]
+    },
+    {
+        "id": "7076d2604b3f1762",
+        "type": "ui_toast",
+        "z": "428f8604148feac8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "lightbulb popup",
+        "x": 1260,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3ab2780772893bd2",
+        "type": "ui_switch",
+        "z": "428f8604148feac8",
+        "name": "Ventilation",
+        "label": "Ventilation",
+        "tooltip": "Manages the ventilation of the \"Smart Greenhouse\"",
+        "group": "42955a33cafb5b6d",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "ventilation",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-thermometer-three-quarters",
+        "oncolor": "red",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-thermometer-quarter",
+        "offcolor": "blue",
+        "animate": true,
+        "x": 670,
+        "y": 360,
+        "wires": [
+            [
+                "cc5dad483e1dd50d",
+                "246bc6cbd02a51bc"
+            ]
+        ]
+    },
+    {
+        "id": "d2f60978f040c2cd",
+        "type": "mqtt out",
+        "z": "428f8604148feac8",
+        "name": "ventilation publisher",
+        "topic": "aau_gh/manager/ventilation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "45fef6fd.16853",
+        "x": 1260,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "cc5dad483e1dd50d",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage MQTT Pub. fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"on\"\n\nif(msg.payload==false)\n    msg.payload = \"off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 360,
+        "wires": [
+            [
+                "d2f60978f040c2cd"
+            ]
+        ]
+    },
+    {
+        "id": "246bc6cbd02a51bc",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage Notification fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"Ventilation turned on\"\n\nif(msg.payload==false)\n    msg.payload = \"Ventilation turned off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 420,
+        "wires": [
+            [
+                "ee3e836c75b99983"
+            ]
+        ]
+    },
+    {
+        "id": "ee3e836c75b99983",
+        "type": "ui_toast",
+        "z": "428f8604148feac8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "ventilation popup",
+        "x": 1270,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "528276d5684e2443",
+        "type": "mqtt in",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "",
+        "topic": "aau_gh/#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "45fef6fd.16853",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "1497e904a1e1c27a",
+                "78ecae9b19852faf",
+                "059b5a8c47540aa4",
+                "2f89f8a5e9063521",
+                "512219481483df28",
+                "0328a7d3e8f8d517",
+                "457dbbaeb6723ffa",
+                "eb02c1a6b0794d4f"
+            ]
+        ]
+    },
+    {
+        "id": "1497e904a1e1c27a",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "pressure",
+        "func": "if(msg.topic === \"aau_gh/climate/getPressure\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "f88886c127b98bf2"
+            ]
+        ]
+    },
+    {
+        "id": "78ecae9b19852faf",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "moisture",
+        "func": "if(msg.topic === \"aau_gh/climate/getSoilMoisture\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "bcee68b622798f17"
+            ]
+        ]
+    },
+    {
+        "id": "7d6b4297c65a1182",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Green House Temperature",
+        "group": "81b11503.49f9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Green House Temperature (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f88886c127b98bf2",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Green House Pressure",
+        "group": "81b11503.49f9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Green House Pressure (Pa)",
+        "label": "Pa",
+        "format": "{{value}}",
+        "min": "500",
+        "max": "1001300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "bcee68b622798f17",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Soil Moisture Content",
+        "group": "81b11503.49f9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Soil Moisture Content",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "059b5a8c47540aa4",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "temperature",
+        "func": "if(msg.topic === \"aau_gh/climate/getTemperature\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "7d6b4297c65a1182"
+            ]
+        ]
+    },
+    {
+        "id": "2f89f8a5e9063521",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "light intensity",
+        "func": "if(msg.topic === \"aau_gh/climate/getLux\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "a873ccdff04d0d9b"
+            ]
+        ]
+    },
+    {
+        "id": "a873ccdff04d0d9b",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Green House Light Intensity",
+        "group": "81b11503.49f9",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Green House Light Intensity (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "512219481483df28",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "rain",
+        "func": "if(msg.topic === \"aau_gh/climate/getRain\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "14b808ad2d561ff9"
+            ]
+        ]
+    },
+    {
+        "id": "0328a7d3e8f8d517",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "altitude",
+        "func": "if(msg.topic === \"aau_gh/climate/getAltitude\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "ba0ed1b0f6ed73c2"
+            ]
+        ]
+    },
+    {
+        "id": "457dbbaeb6723ffa",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "soil temperature",
+        "func": "if(msg.topic === \"aau_gh/climate/getSoilTemp\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "d3d4e8834cadbf0d"
+            ]
+        ]
+    },
+    {
+        "id": "eb02c1a6b0794d4f",
+        "type": "function",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "uv",
+        "func": "if(msg.topic === \"aau_gh/climate/getUV\")\n{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "4e91b314735f7fe2"
+            ]
+        ]
+    },
+    {
+        "id": "14b808ad2d561ff9",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Rain",
+        "group": "81b11503.49f9",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Rain (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 630,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d3d4e8834cadbf0d",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "Soil Temperature",
+        "group": "81b11503.49f9",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Soil Temperature (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 670,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "4e91b314735f7fe2",
+        "type": "ui_gauge",
+        "z": "8cc2fb5e4e4d88bc",
+        "name": "UV",
+        "group": "81b11503.49f9",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "UV (UV-Index)",
+        "label": "UV-Index",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "11",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 630,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "60adc3ff96e723b6",
+        "type": "ui_switch",
+        "z": "428f8604148feac8",
+        "name": "Irrigation",
+        "label": "Irrigation",
+        "tooltip": "Manages the irrigation of the \"Smart Greenhouse\"",
+        "group": "42955a33cafb5b6d",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "irrigation",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-tint",
+        "oncolor": "lightblue",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-tint",
+        "offcolor": "white",
+        "animate": true,
+        "x": 660,
+        "y": 540,
+        "wires": [
+            [
+                "89ae36efd3183c16",
+                "85f0aa3f473dc891"
+            ]
+        ]
+    },
+    {
+        "id": "fd0b219bbccc429c",
+        "type": "mqtt out",
+        "z": "428f8604148feac8",
+        "name": "ventilation publisher",
+        "topic": "aau_gh/manager/irrigation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "45fef6fd.16853",
+        "x": 1280,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "89ae36efd3183c16",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage MQTT Pub. fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"on\"\n\nif(msg.payload==false)\n    msg.payload = \"off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 540,
+        "wires": [
+            [
+                "fd0b219bbccc429c"
+            ]
+        ]
+    },
+    {
+        "id": "85f0aa3f473dc891",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage Notification fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"Irrigation turned on\"\n\nif(msg.payload==false)\n    msg.payload = \"Irrigation turned off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 600,
+        "wires": [
+            [
+                "2a698960a0248e55"
+            ]
+        ]
+    },
+    {
+        "id": "2a698960a0248e55",
+        "type": "ui_toast",
+        "z": "428f8604148feac8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "irrigation popup",
+        "x": 1260,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ba0ed1b0f6ed73c2",
+        "type": "ui_text",
+        "z": "8cc2fb5e4e4d88bc",
+        "group": "81b11503.49f9",
+        "order": 16,
+        "width": "6",
+        "height": "2",
+        "name": "Altitude",
+        "label": "Altitude (m)",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 640,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4f8e080391631ec4",
+        "type": "ui_switch",
+        "z": "428f8604148feac8",
+        "name": "Automatic/Manual Mode",
+        "label": "Enable Automatic Mode",
+        "tooltip": "Switches between automatic and manual mode",
+        "group": "42955a33cafb5b6d",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-power-off",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-power-off",
+        "offcolor": "white",
+        "animate": true,
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "619b30cf6c0443d6",
+                "dfbb524f9bfce866"
+            ]
+        ]
+    },
+    {
+        "id": "619b30cf6c0443d6",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage MQTT Pub. fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"on\"\n\nif(msg.payload==false)\n    msg.payload = \"off\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "ab09e4a40b2ed2f7"
+            ]
+        ]
+    },
+    {
+        "id": "ab09e4a40b2ed2f7",
+        "type": "mqtt out",
+        "z": "428f8604148feac8",
+        "name": "automation publisher",
+        "topic": "aau_gh/manager/automation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "45fef6fd.16853",
+        "x": 340,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "da4c2601b9d75010",
+        "type": "ui_toast",
+        "z": "428f8604148feac8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "automation popup",
+        "x": 330,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "dfbb524f9bfce866",
+        "type": "function",
+        "z": "428f8604148feac8",
+        "name": "Manage Notification fxn",
+        "func": "if(msg.payload==true)\n    msg.payload = \"Activated Automatic Mode\"\n\nif(msg.payload==false)\n    msg.payload = \"Activated Manual Mode\"\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 400,
+        "wires": [
+            [
+                "da4c2601b9d75010"
+            ]
+        ]
+    }
+]
