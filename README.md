@@ -37,10 +37,10 @@ Microcontroller: Esp32 NodeMCU
 <EspMQTTClient.h>
 
 # Application Steps
-Build the Greenhouse-Casing
-Connect the sensor to the Micro-Controller (take a look at the datasheets to not overvolt one of the Sensors/Esp32)
-Flash software onto the Esp32 with the Arduino IDE
-Setup a Node-RED Server and import JSON
+- Build the Greenhouse-Casing
+- Connect the sensor to the Micro-Controller (take a look at the datasheets to not overvolt one of the Sensors/Esp32)
+- Flash software onto the Esp32 with the Arduino IDE
+- Setup a Node-RED Server and import JSON
 
 # Appendix
 
