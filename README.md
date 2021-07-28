@@ -52,6 +52,8 @@ Microcontroller: Esp32 NodeMCU
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/75416341/127279848-2947909b-2dab-4ea2-bb72-949b8eb1ff49.gif)
 
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/75416341/127285693-da95b549-ad31-46f6-9e8b-d155ac65a78c.gif)
+
 
 
 
